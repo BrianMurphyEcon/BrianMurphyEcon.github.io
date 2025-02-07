@@ -1,98 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brian M. Murphy</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-    }
-    header {
-      text-align: center;
-      padding: 20px;
-    }
-    header h1 {
-      font-size: 2.5em;
-      margin: 0;
-    }
-    header hr {
-      width: 50px;
-      border: 2px solid #333;
-      margin: 10px auto;
-    }
-    .container {
-      width: 80%;
-      max-width: 1000px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-    .button-container {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin: 20px 0;
-    }
-    .button-container a {
-      text-decoration: none;
-      color: white;
-      background-color: #333;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 1em;
-      transition: background-color 0.3s, transform 0.2s;
-    }
-    .button-container a:hover {
-      background-color: #0073e6;
-      transform: scale(1.05);
-    }
-    .about, .personal {
-      margin-bottom: 30px;
-    }
-    .about img {
-      float: right;
-      margin-left: 20px;
-      max-width: 200px;
-      border-radius: 10px;
-    }
-    h2 {
-      border-bottom: 2px solid #333;
-      padding-bottom: 5px;
-      margin-bottom: 15px;
-      color: #333;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brian M. Murphy</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-color: #f8f9fa;
+            --text-color: #2c3e50;
+            --link-color: #3498db;
+            --hover-color: #2980b9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 2rem;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .header-line {
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 1rem auto;
+            border: none;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .nav-button {
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        section {
+            background-color: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .profile-image {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+
+        .personal p {
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .social-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-image {
+                margin: 0 auto 1.5rem;
+                display: block;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            .nav-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-button {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Brian M. Murphy</h1>
-    <hr>
-  </header>
-  <div class="container">
-    <!-- Navigation Buttons -->
-    <div class="button-container">
-      <a href="research.html">Research</a>
-      <a href="cv.html">CV</a>
-      <a href="contact.html">Contact</a>
+    <header>
+        <h1>Brian M. Murphy</h1>
+        <div class="header-line"></div>
+    </header>
+
+    <div class="container">
+        <div class="nav-buttons">
+            <a href="research.html" class="nav-button">Research</a>
+            <a href="cv.html" class="nav-button">CV</a>
+            <a href="contact.html" class="nav-button">Contact</a>
+        </div>
+
+        <section class="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="images/Headshot.JPG" alt="Brian Murphy" class="profile-image"/>
+                <div class="about-text">
+                    <p>Hi! My name is Brian Murphy. I am currently a Ph.D. candidate in economics at the University of Houston. I am interested in labor, human capital, education, development, and health economics.</p>
+                    <p>I have a B.A. and a B.S. in economics and mathematics from La Salle University in Philadelphia. I graduated Maxima Cum Laude, with a 4.0 GPA. During my undergrad, I was honored to receive the Flubacher Award, given to a student each year who shows commitment to community service and who excels in the classroom. Additionally, I was the recipient of the Geruson Award, given to the student who writes the most outstanding seminar paper. Finally, I was given the most outstanding student award in the College of Liberal Arts.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="personal">
+            <h2>Personal</h2>
+            <p>I am originally from Philadelphia, PA. I played division 1 baseball in my undergrad. As a former athlete, I am a huge sports fan, and I am a massive Philadelphia Eagles, Phillies, 76ers, and Flyers fan. Most of my free time consists of watching their games or going to them.</p>
+            <p>I am also a big-time traveler, having been to 15 countries and 31 states. I love learning about culture, trying new foods, and just seeing the world!</p>
+            <p>I enjoy listening to music and going to concerts. My favorite artists include CAAMP, Mt. Joy, The Lumineers, Kendrick Lamar, and more.</p>
+        </section>
+
+        <section class="social">
+            <h2>Connect With Me</h2>
+            <div class="social-links">
+                <a href="https://twitter.com/brianmurphyecon" class="social-button">
+                    Twitter
+                </a>
+                <a href="https://github.com/brianmurphyecon" class="social-button">
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/brian-murphy-749733163" class="social-button">
+                    LinkedIn
+                </a>
+            </div>
+        </section>
     </div>
-    <section class="about">
-      <h2>About Me</h2>
-      <img src="images/Headshot.JPG" alt="Brian Murphy"/>
-      <p>Hi! My name is Brian Murphy. I am currently a Ph.D. candidate in economics at the University of Houston. I am interested in labor, human capital, education, development, and health economics.</p>
-      <p>I have a B.A. and a B.S. in economics and mathematics from La Salle University in Philadelphia. I graduated Maxima Cum Laude, with a 4.0 GPA. During my undergrad, I was honored to receive the Flubacher Award, given to a student each year who shows commitment to community service and who excels in the classroom. Additionally, I was the recipient of the Geruson Award, given to the student who writes the most outstanding seminar paper. Finally, I was given the most outstanding student award in the College of Liberal Arts.</p>
-    </section>
-    <section class="personal">
-      <h2>Personal</h2>
-      <p>I am originally from Philadelphia, PA. I played division 1 baseball in my undergrad. As a former athlete, I am a huge sports fan, and I am a massive Philadelphia Eagles, Phillies, 76ers, and Flyers fan. Most of my free time consists of watching their games or going to them.</p>
-      <p>I am also a big-time traveler, having been to 15 countries and 31 states. I love learning about culture, trying new foods, and just seeing the world!</p>
-      <p> I enjoy listening to music and going to concerts. My favorite artists include CAAMP, Mt. Joy, The Lumineers, Kendrick Lamar, and more.</p>
-    </section>
-  </div>
 </body>
 </html>
