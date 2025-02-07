@@ -28,47 +28,50 @@
         }
 
         header {
+            text-align: center;
+            padding: 3rem 2rem;
             background-color: white;
-            padding: 2rem;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         h1 {
             font-size: 2.5rem;
-            margin-bottom: 1.5rem;
             color: var(--primary-color);
+            margin-bottom: 0.5rem;
         }
 
-        nav {
-            margin-bottom: 1rem;
+        .header-line {
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 1rem auto;
+            border: none;
         }
 
-        nav a {
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .nav-button {
+            background-color: var(--primary-color);
+            color: white;
             text-decoration: none;
-            color: var(--text-color);
-            margin-right: 1.5rem;
-            padding: 0.5rem 0;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
             font-weight: 500;
-            position: relative;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
-        nav a:hover {
-            color: var(--link-color);
+        .nav-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
         }
 
-        nav a.active {
-            color: var(--link-color);
-        }
-
-        nav a.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--link-color);
+        .nav-button.active {
+            background-color: var(--secondary-color);
         }
 
         main {
@@ -131,14 +134,13 @@
                 padding: 1rem;
             }
 
-            nav {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 1rem;
+            .nav-buttons {
+                flex-direction: column;
+                align-items: stretch;
             }
 
-            nav a {
-                margin-right: 0;
+            .nav-button {
+                text-align: center;
             }
 
             main {
@@ -154,15 +156,16 @@
 <body>
     <header>
         <h1>Brian M. Murphy</h1>
-        <nav>
-            <a href="https://brianmurphyecon.github.io/">Home</a>
-            <a href="research.html" class="active">Research</a>
-            <a href="cv/BMurphy_CV.pdf">CV</a>
-            <a href="https://github.com/brianmurphyecon">Code</a>
-            <a href="teaching.html">Teaching</a>
-            <a href="notes.html">Notes</a>
-            <a href="advice.html">Advice</a>
-        </nav>
+        <div class="header-line"></div>
+        <div class="nav-buttons">
+            <a href="https://brianmurphyecon.github.io/" class="nav-button">Home</a>
+            <a href="research.html" class="nav-button active">Research</a>
+            <a href="cv/BMurphy_CV.pdf" class="nav-button">CV</a>
+            <a href="https://github.com/brianmurphyecon" class="nav-button">Code</a>
+            <a href="teaching.html" class="nav-button">Teaching</a>
+            <a href="notes.html" class="nav-button">Notes</a>
+            <a href="advice.html" class="nav-button">Advice</a>
+        </div>
     </header>
     <main>
         <h2>Research</h2>
