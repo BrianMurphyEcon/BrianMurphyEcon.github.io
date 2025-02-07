@@ -24,6 +24,27 @@
       border: 2px solid #333;
       margin: 10px auto;
     }
+    nav {
+      background-color: #333;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      background-color: #575757;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    nav a:hover {
+      background-color: #0073e6;
+    }
     .container {
       width: 80%;
       max-width: 1000px;
@@ -64,24 +85,31 @@
   </style>
 </head>
 <body>
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#personal">Personal</a>
+    <a href="#social-media">Social Media</a>
+  </nav>
+
   <header>
     <h1>Brian M. Murphy</h1>
     <hr>
   </header>
   <div class="container">
-    <section class="about">
+    <section id="about" class="about">
       <h2>About Me</h2>
       <img src="images\Headshot.JPG" alt="Brian Murphy"/>
       <p>Hi! My name is Brian Murphy. I am currently a Ph.D. candidate in economics at the University of Houston. I am interested in labor, human capital, education, development, and health economics.</p>
       <p>I have a B.A. and a B.S. in economics and mathematics from La Salle University in Philadelphia. I graduated Maxima Cum Laude, with a 4.0 GPA. During my undergrad, I was honored to receive the Flubacher Award, given to a student each year who shows commitment to community service and who excels in the classroom. Additionally, I was the recipient of the Geruson Award, given to the student who writes the most outstanding seminar paper. Finally, I was given the most outstanding student award in the College of Liberal Arts.</p>
     </section>
-    <section class="personal">
+    <section id="personal" class="personal">
       <h2>Personal</h2>
       <p>I am originally from Philadelphia, PA. I played division 1 baseball in my undergrad. As a former athlete, I am a huge sports fan, and I am a massive Philadelphia Eagles, Phillies, 76ers, and Flyers fan. Most of my free time consists of watching their games or going to them.</p>
       <p>I am also a big-time traveler, having been to 15 countries and 31 states. I love learning about culture, trying new foods, and just seeing the world!</p>
       <p> I enjoy listening to music and going to concerts. My favorite artists include CAAMP, Mt. Joy, The Lumineers, Kendrick Lamar, and more.</p>
     </section>
-    <section class="social-media">
+    <section id="social-media" class="social-media">
       <h2>Social Media</h2>
       <p>Below you will find my LinkedIn, Twitter, and BlueSky.</p>
       <div class="social-icons">
