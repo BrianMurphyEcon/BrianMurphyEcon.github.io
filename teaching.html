@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brian M. Murphy - Teaching</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-color: #ffffff;
+            --text-color: #2c3e50;
+            --link-color: #3498db;
+            --hover-color: #2980b9;
+            --nav-height: 60px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        /* Modern Navigation */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: flex-end;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: var(--secondary-color);
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Header Section */
+        .header-container {
+            max-width: 1200px;
+            margin: calc(var(--nav-height) + 2rem) auto 2rem;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-line {
+            width: 100px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 1rem 0;
+            border: none;
+        }
+
+        /* Content Sections */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            background-color: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        .teaching-description {
+            margin-bottom: 2rem;
+        }
+
+        .course-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .course-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .course-card h3 {
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+        }
+
+        .course-card p {
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        .course-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            min-width: 100px;
+        }
+
+        .course-resources {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            margin-right: 0.8rem;
+            margin-bottom: 0.8rem;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .resource-link:hover {
+            background-color: var(--hover-color);
+            transform: translateY(-2px);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 2rem;
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        .teaching-philosophy {
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-content {
+                padding: 0.75rem 1rem;
+                gap: 1rem;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .header-container {
+                margin-top: calc(var(--nav-height) + 1rem);
+                padding: 0 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            .course-card {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Navigation -->
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="/" class="nav-link">About</a>
+            <a href="research.html" class="nav-link">Research</a>
+            <a href="cv/BMurphy_CV.pdf" class="nav-link">CV</a>
+            <a href="teaching.html" class="nav-link active">Teaching</a>
+            <a href="https://github.com/brianmurphyecon" class="nav-link">Code</a>
+            <a href="advice.html" class="nav-link">Advice</a>
+            <a href="notes.html" class="nav-link">Notes</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="header-container">
+        <h1>Teaching</h1>
+        <div class="header-line"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <section class="teaching-intro">
+            <div class="teaching-description">
+                <p>This page contains information about courses I have taught or assisted with, my teaching philosophy, and resources for students. As an economist, I believe in making complex economic concepts accessible and applicable to real-world situations.</p>
+            </div>
+        </section>
+
+        <section class="current-courses">
+            <h2>Current Courses</h2>
+            <div class="empty-state">
+                <p>Information about current courses will be posted here when available.</p>
+            </div>
+            <!-- Example course card structure for future use
+            <div class="course-card">
+                <h3>ECON 101: Principles of Microeconomics</h3>
+                <div class="course-detail">
+                    <span class="detail-label">Semester:</span>
+                    <span>Fall 2024</span>
+                </div>
+                <div class="course-detail">
+                    <span class="detail-label">Schedule:</span>
+                    <span>MWF 10:00-10:50 AM, Room E101</span>
+                </div>
+                <div class="course-detail">
+                    <span class="detail-label">Office Hours:</span>
+                    <span>Tuesdays 1:00-3:00 PM, Thursdays 2:00-4:00 PM</span>
+                </div>
+                <p>This course introduces students to the fundamentals of microeconomic theory, including consumer behavior, firm theory, market structures, and welfare analysis.</p>
+                <div class="course-resources">
+                    <h4>Course Resources:</h4>
+                    <a href="#" class="resource-link">Syllabus</a>
+                    <a href="#" class="resource-link">Course Calendar</a>
+                    <a href="#" class="resource-link">Lecture Notes</a>
+                    <a href="#" class="resource-link">Problem Sets</a>
+                </div>
+            </div>
+            -->
+        </section>
+
+        <section class="past-courses">
+            <h2>Past Courses</h2>
+            <div class="empty-state">
+                <p>Information about past courses will be posted here when available.</p>
+            </div>
+            <!-- Past courses will be added here -->
+        </section>
+
+        <section class="student-resources">
+            <h2>Resources for Students</h2>
+            <div class="empty-state">
+                <p>General teaching resources and materials will be posted here when available.</p>
+            </div>
+            <!-- Student resources will be added here -->
+        </section>
+    </div>
+
+    <script>
+        // Add shadow to navigation on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav-container');
+            if (window.scrollY > 0) {
+                nav.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
