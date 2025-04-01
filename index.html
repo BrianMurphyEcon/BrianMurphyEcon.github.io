@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brian M. Murphy</title>
+    <!-- Add Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -164,6 +166,7 @@
         .social-button {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             padding: 0.8rem 1.5rem;
             background-color: var(--primary-color);
             color: white;
@@ -173,9 +176,45 @@
             transition: all 0.3s ease;
         }
 
-        .social-button:hover {
+        .social-button i {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+
+        /* Updated style for icon-only buttons */
+        .social-icon-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon-button i {
+            font-size: 1.5rem;
+        }
+
+        .social-button:hover, .social-icon-button:hover {
             background-color: var(--secondary-color);
             transform: translateY(-2px);
+        }
+
+        /* For screen readers */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
         }
 
         @media (max-width: 768px) {
@@ -256,10 +295,22 @@
         <section class="social">
             <h2>Connect With Me</h2>
             <div class="social-links">
-                <a href="https://twitter.com/brianmurphyecon" class="social-button">Twitter</a>
-                <a href="https://bsky.app/profile/brianmurphyecon.bsky.social" class="social-button">Blue Sky</a>
-                <a href="https://github.com/brianmurphyecon" class="social-button">GitHub</a>
-                <a href="https://www.linkedin.com/in/brian-murphy1/" class="social-button">LinkedIn</a>
+                <a href="https://twitter.com/brianmurphyecon" class="social-icon-button">
+                    <i class="fab fa-x-twitter"></i>
+                    <span class="sr-only">X (Twitter)</span>
+                </a>
+                <a href="https://bsky.app/profile/brianmurphyecon.bsky.social" class="social-icon-button">
+                    <i class="fa-solid fa-cloud"></i>
+                    <span class="sr-only">Blue Sky</span>
+                </a>
+                <a href="https://github.com/brianmurphyecon" class="social-icon-button">
+                    <i class="fab fa-github"></i>
+                    <span class="sr-only">GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/brian-murphy1/" class="social-icon-button">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span class="sr-only">LinkedIn</span>
+                </a>
             </div>
         </section>
     </div>
