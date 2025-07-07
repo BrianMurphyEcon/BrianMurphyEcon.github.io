@@ -134,6 +134,8 @@
 
         .teaching-description {
             margin-bottom: 2rem;
+            font-size: 1.1rem;
+            color: #555;
         }
 
         .course-card {
@@ -178,12 +180,24 @@
         }
 
         .semester-header {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: 600;
             color: var(--primary-color);
             margin-bottom: 1rem;
             padding-bottom: 0.5rem;
             border-bottom: 1px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .semester-badge {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
         }
 
         .multi-course {
@@ -195,6 +209,51 @@
 
         .multi-course .course-card {
             margin-bottom: 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--secondary-color), var(--hover-color));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .philosophy-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-left: 4px solid var(--secondary-color);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .philosophy-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
         }
 
         @media (max-width: 768px) {
@@ -225,6 +284,10 @@
             .multi-course {
                 grid-template-columns: 1fr;
             }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
@@ -250,12 +313,6 @@
 
     <!-- Main Content -->
     <div class="container">
-        <section class="teaching-intro">
-            <div class="teaching-description">
-                <p>Below is my experience as a Teaching Assistant.</p>
-            </div>
-        </section>
-
         <section class="ta-experience">
             <h2>Teaching Assistant Experience</h2>
             
@@ -264,7 +321,6 @@
             <p><strong>Fall 2024:</strong> Intermediate Microeconomics, Public Economics</p>
             
             <p><strong>Fall 2023 - Spring 2024:</strong> Principles of Macroeconomics</p>
-            
         </section>
     </div>
 
