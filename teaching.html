@@ -153,6 +153,7 @@
         .course-card h3 {
             margin-bottom: 0.8rem;
             color: var(--primary-color);
+            font-size: 1.3rem;
         }
 
         .course-card p {
@@ -169,42 +170,31 @@
         .detail-label {
             font-weight: 600;
             min-width: 100px;
+            color: var(--primary-color);
         }
 
-        .course-resources {
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid #eee;
+        .semester-group {
+            margin-bottom: 2rem;
         }
 
-        .resource-link {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.5rem 1rem;
-            margin-right: 0.8rem;
-            margin-bottom: 0.8rem;
-            background-color: var(--secondary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 500;
-            transition: all 0.3s ease;
+        .semester-header {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e9ecef;
         }
 
-        .resource-link:hover {
-            background-color: var(--hover-color);
-            transform: translateY(-2px);
+        .multi-course {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
         }
 
-        .empty-state {
-            text-align: center;
-            padding: 2rem;
-            color: #6c757d;
-            font-style: italic;
-        }
-
-        .teaching-philosophy {
-            margin-bottom: 1.5rem;
+        .multi-course .course-card {
+            margin-bottom: 0;
         }
 
         @media (max-width: 768px) {
@@ -230,6 +220,10 @@
 
             .course-card {
                 padding: 1.2rem;
+            }
+
+            .multi-course {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -258,56 +252,19 @@
     <div class="container">
         <section class="teaching-intro">
             <div class="teaching-description">
-                <p>This page contains information about courses I have taught or assisted with, my teaching statement, and resources for students. </p>
+                <p>Below is my experience as a Teaching Assistant.</p>
             </div>
         </section>
 
-        <section class="current-courses">
-            <h2>Current Courses</h2>
-            <div class="empty-state">
-                <p>Information about current courses will be posted here when available.</p>
-            </div>
-            <!-- Example course card structure for future use
-            <div class="course-card">
-                <h3>ECON 101: Principles of Microeconomics</h3>
-                <div class="course-detail">
-                    <span class="detail-label">Semester:</span>
-                    <span>Fall 2024</span>
-                </div>
-                <div class="course-detail">
-                    <span class="detail-label">Schedule:</span>
-                    <span>MWF 10:00-10:50 AM, Room E101</span>
-                </div>
-                <div class="course-detail">
-                    <span class="detail-label">Office Hours:</span>
-                    <span>Tuesdays 1:00-3:00 PM, Thursdays 2:00-4:00 PM</span>
-                </div>
-                <p>This course introduces students to the fundamentals of microeconomic theory, including consumer behavior, firm theory, market structures, and welfare analysis.</p>
-                <div class="course-resources">
-                    <h4>Course Resources:</h4>
-                    <a href="#" class="resource-link">Syllabus</a>
-                    <a href="#" class="resource-link">Course Calendar</a>
-                    <a href="#" class="resource-link">Lecture Notes</a>
-                    <a href="#" class="resource-link">Problem Sets</a>
-                </div>
-            </div>
-            -->
-        </section>
-
-        <section class="past-courses">
-            <h2>Past Courses</h2>
-            <div class="empty-state">
-                <p>Information about past courses will be posted here when available.</p>
-            </div>
-            <!-- Past courses will be added here -->
-        </section>
-
-        <section class="student-resources">
-            <h2>Resources for Students</h2>
-            <div class="empty-state">
-                <p>General teaching resources and materials will be posted here when available.</p>
-            </div>
-            <!-- Student resources will be added here -->
+        <section class="ta-experience">
+            <h2>Teaching Assistant Experience</h2>
+            
+            <p><strong>Spring 2025:</strong> Intermediate Microeconomics</p>
+            
+            <p><strong>Fall 2024:</strong> Intermediate Microeconomics, Public Economics</p>
+            
+            <p><strong>Fall 2023 - Spring 2024:</strong> Principles of Macroeconomics</p>
+            
         </section>
     </div>
 
