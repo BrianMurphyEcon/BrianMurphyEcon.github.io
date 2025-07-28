@@ -15,21 +15,19 @@
             --link-color: #3498db;
             --hover-color: #2980b9;
             --nav-height: 60px;
+            --orcid-green: #a6ce39;
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--background-color);
         }
-
         /* Modern Navigation */
         .nav-container {
             position: fixed;
@@ -41,7 +39,6 @@
             z-index: 1000;
             border-bottom: 1px solid rgba(0,0,0,0.1);
         }
-
         .nav-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -50,7 +47,6 @@
             justify-content: flex-end;
             gap: 2rem;
         }
-
         .nav-link {
             color: var(--text-color);
             text-decoration: none;
@@ -59,7 +55,6 @@
             position: relative;
             transition: color 0.3s ease;
         }
-
         .nav-link::after {
             content: '';
             position: absolute;
@@ -70,33 +65,27 @@
             background-color: var(--secondary-color);
             transition: width 0.3s ease;
         }
-
         .nav-link:hover::after {
             width: 100%;
         }
-
         .nav-link.active {
             color: var(--secondary-color);
         }
-
         .nav-link.active::after {
             width: 100%;
         }
-
         /* Header Section */
         .header-container {
             max-width: 1200px;
             margin: calc(var(--nav-height) + 2rem) auto 2rem;
             padding: 0 2rem;
         }
-
         h1 {
             font-size: 2.5rem;
             color: var(--primary-color);
             font-weight: 700;
             margin-bottom: 0.5rem;
         }
-
         .header-line {
             width: 100px;
             height: 3px;
@@ -104,14 +93,12 @@
             margin: 1rem 0;
             border: none;
         }
-
         /* Content Sections */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
-
         section {
             background-color: white;
             padding: 2rem;
@@ -120,12 +107,10 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
         section:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.1);
         }
-
         h2 {
             font-size: 1.8rem;
             color: var(--primary-color);
@@ -133,14 +118,12 @@
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--secondary-color);
         }
-
         /* New About Section Layout */
         .about-content {
             display: flex;
             gap: 2rem;
             align-items: flex-start;
         }
-
         .profile-image {
             width: 200px;
             height: 200px;
@@ -150,30 +133,25 @@
             transition: transform 0.3s ease;
             flex-shrink: 0;
         }
-
         .profile-image:hover {
             transform: scale(1.02);
         }
-
         .about-text-and-social {
             flex: 1;
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
         }
-
         .about-text p {
             margin-bottom: 1rem;
             font-size: 1.1rem;
             line-height: 1.7;
         }
-
         .social-links {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
         }
-
         .social-icon-button {
             display: inline-flex;
             align-items: center;
@@ -186,16 +164,20 @@
             border-radius: 8px;
             transition: all 0.3s ease;
         }
-
         .social-icon-button i {
             font-size: 1.3rem;
         }
-
         .social-icon-button:hover {
             background-color: var(--secondary-color);
             transform: translateY(-2px);
         }
-
+        /* ORCID specific styling */
+        .social-icon-button.orcid {
+            background-color: var(--orcid-green);
+        }
+        .social-icon-button.orcid:hover {
+            background-color: #95b838;
+        }
         /* Contact info styling */
         .contact-info {
             display: flex;
@@ -205,16 +187,13 @@
             font-size: 0.95rem;
             color: #666;
         }
-
         .contact-info a {
             color: var(--link-color);
             text-decoration: none;
         }
-
         .contact-info a:hover {
             text-decoration: underline;
         }
-
         /* For screen readers */
         .sr-only {
             position: absolute;
@@ -227,7 +206,6 @@
             white-space: nowrap;
             border-width: 0;
         }
-
         @media (max-width: 768px) {
             .nav-content {
                 padding: 0.75rem 1rem;
@@ -235,31 +213,25 @@
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
             }
-
             .header-container {
                 margin-top: calc(var(--nav-height) + 1rem);
                 padding: 0 1rem;
             }
-
             .about-content {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
             }
-
             .profile-image {
                 width: 150px;
                 height: 150px;
             }
-
             .container {
                 padding: 0 1rem;
             }
-
             section {
                 padding: 1.5rem;
             }
-
             .social-links {
                 justify-content: center;
             }
@@ -279,13 +251,11 @@
             <a href="notes.html" class="nav-link">Notes</a>
         </div>
     </nav>
-
     <!-- Header -->
     <div class="header-container">
         <h1>Brian M. Murphy</h1>
         <div class="header-line"></div>
     </div>
-
     <!-- Main Content -->
     <div class="container">
         <section class="about">
@@ -295,15 +265,19 @@
                 <div class="about-text-and-social">
                     <div class="about-text">
                         <p>Hi! My name is Brian Murphy. I am currently a Third Year Ph.D. candidate in economics at the University of Houston. I am interested in the economics of education, labor, development, and health economics.</p>
-                        <p>My research currently focuses on educational and labor market outcomes.</p>
+                        <p>My research currently focuses on educational factors, such as school choice, school closures, school location, institutional factors, and how they affect labor market outcomes. </p>
                     </div>
                     
                     <div class="contact-info">
-                        <div><strong>Email:</strong> <a href="mailto:bmmurphy2@uh.edu">bmurphy@uh.edu</a></div>
+                        <div><strong>Email:</strong> <a href="mailto:bmmurphy2@uh.edu">bmmurphy2@uh.edu</a></div>
                         <div><strong>Institution:</strong> University of Houston, Department of Economics</div>
                     </div>
                     
                     <div class="social-links">
+                        <a href="https://orcid.org/0009-0000-1942-176X" class="social-icon-button orcid">
+                            <i class="fab fa-orcid"></i>
+                            <span class="sr-only">ORCID</span>
+                        </a>
                         <a href="https://twitter.com/brianmurphyecon" class="social-icon-button">
                             <i class="fab fa-x-twitter"></i>
                             <span class="sr-only">X (Twitter)</span>
@@ -325,7 +299,6 @@
             </div>
         </section>
     </div>
-
     <script>
         // Add shadow to navigation on scroll
         window.addEventListener('scroll', () => {
